@@ -1,39 +1,28 @@
 package academy.devdojo.maratonajava.javacore.Zgenerics.test;
 
-abstract class Animal {
-    public abstract void consulta();
-}
+import java.util.ArrayList;
+import java.util.List;
 
-class Cachorro extends Animal {
-    @Override
-    public void consulta() {
-        System.out.println("Consultando soguinho");
-    }
-}
-
-class Gato extends Animal {
-    @Override
-    public void consulta() {
-        System.out.println("Consultando gatinho");
-    }
-}
-
-public class WildcardTest01 {
+public class WildcardTest02 {
     public static void main(String[] args) {
-        Cachorro[] cachorros = {new Cachorro(), new Cachorro()};
-        Gato[] gatos = {new Gato(), new Gato()};
+        List<Cachorro> cachorros = List.of(new Cachorro(), new Cachorro());
+        List<Gato> gatos = List.of(new Gato(), new Gato());
 
-//        printConsulta(cachorros);
-//        printConsulta(gatos);
+        printConsulta(cachorros);
+        printConsulta(gatos);
 
-        Animal[] animals = {new Gato(), new Cachorro()};
-        printConsulta(animals);
+        List<Animal> animals = new ArrayList<>();
+        printConsultaAnimal(animals);
     }
 
-    private static void printConsulta(Animal[] animals) {
+    private static void printConsulta(List<? extends Animal> animals) {
         for (Animal animal : animals) {
             animal.consulta();
         }
-        animals[1] = new Gato();
+    }
+
+    private static void printConsultaAnimal(List<? super Animal> animals) {
+        animals.add(new Cachorro());
+        animals.add(new Gato());
     }
 }

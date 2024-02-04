@@ -1,18 +1,31 @@
 package academy.devdojo.maratonajava.javacore.Ycolecoes.test;
 
+import academy.devdojo.maratonajava.javacore.Ycolecoes.dominio.Manga;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class BinarySearchTest01 {
+public class BinarySearchTest02 {
     public static void main(String[] args) {
-        List<Integer> numeros = new ArrayList<>();
-        numeros.add(2);
-        numeros.add(0);
-        numeros.add(4);
-        numeros.add(3);
+        SortMangaByIdComparator sortMangaByIdComparator = new SortMangaByIdComparator();
 
-        Collections.sort(numeros);
-        System.out.println(Collections.binarySearch(numeros, 1));
+        List<Manga> mangas = new ArrayList<>(6);
+        mangas.add(new Manga(5L, "Berserk", 19.9));
+        mangas.add(new Manga(1L, "Hellsing", 9.5));
+        mangas.add(new Manga(4L, "Pokemon", 3.2));
+        mangas.add(new Manga(3L, "Attack on titan", 11.20));
+        mangas.add(new Manga(2L, "Dragon ball Z", 2.99));
+
+        // Collections.sort(mangas);
+        mangas.sort(sortMangaByIdComparator);
+
+        for (Manga manga : mangas) {
+            System.out.println(manga);
+        }
+
+        Manga mangaToSearch = new Manga(2L, "Dragon ball Z", 2.99);
+
+        System.out.println(Collections.binarySearch(mangas, mangaToSearch, sortMangaByIdComparator));
     }
 }
