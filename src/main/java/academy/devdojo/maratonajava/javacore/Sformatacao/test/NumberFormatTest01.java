@@ -23,6 +23,5 @@ public class NumberFormatTest01 {
             format.setMaximumFractionDigits(2);
             System.out.println(format.format(valor));
         }
-
     }
 }

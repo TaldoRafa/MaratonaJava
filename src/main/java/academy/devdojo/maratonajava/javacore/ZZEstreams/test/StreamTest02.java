@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class StreamTest02 {
     private static List<LightNovel> list = new ArrayList<>(List.of(
@@ -20,7 +19,12 @@ public class StreamTest02 {
     ));
 
     public static void main(String[] args) {
-        List<String> titles = list.stream().sorted(Comparator.comparing(LightNovel::getTitle)).filter(ln -> ln.getPrice() <= 4).limit(3).map(LightNovel::getTitle).collect(Collectors.toList());
+        List<String> titles = list.stream()
+                .sorted(Comparator.comparing(LightNovel::getTitle))
+                .filter(ln -> ln.getPrice() <= 4)
+                .limit(3)
+                .map(LightNovel::getTitle)
+                .collect(Collectors.toList());
         System.out.println(titles);
     }
 }

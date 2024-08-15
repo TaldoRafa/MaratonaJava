@@ -5,10 +5,21 @@
     <inspection_tool class="CommentedOutCode" enabled="true" level="WEAK WARNING" enabled_by_default="true">
       <option name="minLines" value="4" />
     </inspection_tool>
+    <inspection_tool class="ConstantValue" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="DuplicatedCode" enabled="true" level="WEAK WARNING" enabled_by_default="true">
       <Languages>
         <language minSize="121" name="Java" />
       </Languages>
+    </inspection_tool>
+    <inspection_tool class="EmptyMethod" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="EXCLUDE_ANNOS">
+        <value>
+          <list size="1">
+            <item index="0" class="java.lang.String" itemvalue="org.junit.jupiter.api.Test" />
+          </list>
+        </value>
+      </option>
+      <option name="commentsAreContent" value="false" />
     </inspection_tool>
     <inspection_tool class="ForCanBeForeach" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="REPORT_INDEXED_LOOP" value="false" />
@@ -34,6 +45,8 @@
       <option name="processLiterals" value="true" />
       <option name="processComments" value="true" />
     </inspection_tool>
+    <inspection_tool class="SqlDialectInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlNoDataSourceInspection" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="ThrowFromFinallyBlock" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="ThrowablePrintStackTrace" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="WriteOnlyObject" enabled="false" level="WARNING" enabled_by_default="false" />

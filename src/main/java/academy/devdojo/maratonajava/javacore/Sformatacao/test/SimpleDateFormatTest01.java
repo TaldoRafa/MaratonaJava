@@ -8,6 +8,5 @@ public class SimpleDateFormatTest01 {
         String pattern = "dd/MM/yyy G 'as' HH:mm:ss z";
         SimpleDateFormat sdf = new SimpleDateFormat(pattern);
         System.out.println(sdf.format(new Date()));
-
     }
 }
